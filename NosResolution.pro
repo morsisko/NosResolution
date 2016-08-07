@@ -14,11 +14,13 @@ TEMPLATE = lib
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    fpsbreaker.cpp
+    fpsbreaker.cpp \
+    resolutionbreaker.cpp
 
 HEADERS  += mainwindow.h \
     patternscan.h \
     fpsbreaker.h \
-    patternscan.h
+    patternscan.h \
+    resolutionbreaker.h
 
 FORMS    += mainwindow.ui

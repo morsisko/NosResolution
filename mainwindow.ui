@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>NosResolution</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QGroupBox" name="groupBox">
@@ -35,7 +35,7 @@
     <widget class="QLineEdit" name="xSize">
      <property name="geometry">
       <rect>
-       <x>225</x>
+       <x>64</x>
        <y>38</y>
        <width>108</width>
        <height>22</height>
@@ -45,7 +45,7 @@
     <widget class="QLineEdit" name="ySize">
      <property name="geometry">
       <rect>
-       <x>64</x>
+       <x>225</x>
        <y>38</y>
        <width>108</width>
        <height>22</height>
@@ -67,7 +67,7 @@
       </font>
      </property>
      <property name="text">
-      <string>X:</string>
+      <string>Y:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_2">
@@ -85,7 +85,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Y:</string>
+      <string>X:</string>
      </property>
     </widget>
     <widget class="QPushButton" name="resizeButton">
@@ -101,6 +101,11 @@
       <string>Resize</string>
      </property>
     </widget>
+    <zorder>ySize</zorder>
+    <zorder>label</zorder>
+    <zorder>label_2</zorder>
+    <zorder>resizeButton</zorder>
+    <zorder>xSize</zorder>
    </widget>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">

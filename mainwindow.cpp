@@ -29,3 +29,14 @@ void MainWindow::on_fpsPushButton_clicked()
 {
     fpsBreaker.setFpsLimit(ui->fpsSpinBox->value());
 }
+
+void MainWindow::on_resizeButton_clicked()
+{
+    int x = ui->xSize->text().toInt();
+    int y = ui->ySize->text().toInt();
+
+    if (!x || !y)
+        return;
+
+    resolutionBreaker.changeResolution(x, y);
+}

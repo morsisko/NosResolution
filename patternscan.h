@@ -3,22 +3,30 @@
 
 //Thanks to this: http://www.unknowncheats.me/forum/1064672-post23.html
 
-bool DataCompare(BYTE* pData, BYTE* bSig, char* szMask)
+class PatternScanner
 {
-    for (; *szMask; ++szMask, ++pData, ++bSig)
+public:
+    PatternScanner() {};
+    ~PatternScanner() {};
+    bool dataCompare(BYTE* pData, BYTE* bSig, char* szMask)
     {
-        if (*szMask == 'x' && *pData != *bSig)
-            return false;
+        for (; *szMask; ++szMask, ++pData, ++bSig)
+        {
+            if (*szMask == 'x' && *pData != *bSig)
+                return false;
+        }
+        return (*szMask) == NULL;
     }
-    return (*szMask) == NULL;
-}
 
-BYTE* FindPattern(BYTE* dwAddress, DWORD dwSize, BYTE* pbSig, char* szMask)
-{
-    for (DWORD i = NULL; i < dwSize; i++)
+    BYTE* findPattern(BYTE* dwAddress, DWORD dwSize, BYTE* pbSig, char* szMask)
     {
-        if (DataCompare(dwAddress + i, pbSig, szMask))
-            return dwAddress + i;
+        for (DWORD i = NULL; i < dwSize; i++)
+        {
+            if (dataCompare(dwAddress + i, pbSig, szMask))
+                return dwAddress + i;
+        }
+        return 0;
     }
-    return 0;
-}
+};
+
+
